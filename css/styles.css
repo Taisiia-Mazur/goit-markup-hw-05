@@ -149,7 +149,7 @@ address {
   letter-spacing: 0.04em;
   min-width: 169px;
   height: 56px;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
   border: none;
   border-radius: 4px;
@@ -441,17 +441,21 @@ footer .logo-accent {
 
 .input-subscribe {
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 1px solid #ffffff;
+    font-size: 12px;
+      line-height: 2;
+      letter-spacing: 0.04em;
   border-radius: 4px;
   width: 264px;
   height: 40px;
   padding: 8px 0 8px 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
 }
-.input-subscribe::placeholder {
+::placeholder {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: #ffffff;
 }
 .form-subscribe {
   display: flex;
@@ -460,7 +464,7 @@ footer .logo-accent {
   gap: 24px;
 }
 .form-subscribe button {
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   padding: 8px 24px;
   display: flex;
@@ -538,7 +542,7 @@ transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-b
 }
 .close-btn:hover .icon-btn,
 .close-btn:focus .icon-btn {
-  fill: #f4f4fd;
+  fill: #ffffff;
 }
 
 .title-modal {
@@ -552,12 +556,12 @@ transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-b
   
 }
 .box-label {
-margin-top: 8px;
+margin-bottom: 8px;
 }
 .form-label {
   display: block;
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
   margin-bottom: 4px;
@@ -580,38 +584,59 @@ margin-top: 8px;
   border-radius: 4px;
   height: 40px;
   padding-left: 38px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-modal:hover,
-.input-modal:checked {
+.input-modal:focus {
   border-color: #4d5ae5;
 }
 .input-modal:hover+.form-icon,
 .input-modal:focus + .form-icon {
   fill: #4d5ae5;
 }
+.box-label-comment {
+  margin-bottom: 16px;
+}
 .comment {
+      font-size: 12px;
+      line-height: 1.17;
+      letter-spacing: 0.04em;
+      color: rgba(46, 47, 66, 0.4);
   width: 100%;
   padding: 8px 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 120px;
   resize: none;
+  background-color: transparent;
+  outline: transparent;
 }
 
 .comment:hover,
 .comment:focus {
-  border: 1px solid #4d5ae5;
+  border-color: #4d5ae5;
 }
 
 .comment::placeholder {
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
+}
+
+.box-label-comment {
+  margin-bottom: 24px;
+}
+.label-privacy {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
 }
 
 .checkbox {
@@ -625,45 +650,17 @@ margin-top: 8px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   width: 16px;
   height: 16px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.checkbox-agree:hover,
-.checkbox-agree:focus {
-  background-color: #404bbf;
-}
-
-.checkbox-vector {
-  width: 100%;
-  display: flex;
   justify-content: center;
   fill: transparent;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 
-.checkbox-vector:hover,
-.checkbox-vector:focus {
-  fill: #f4f4fd;
+input[type="checkbox"]:checked span {
+background-color: #404bbf;
+border: none;
+fill: #f4f4fd;
 }
-
-.checkbox-text {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-  margin-left: 8px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.checkbox-text span {
-  line-height: 1.33;
-  text-decoration: underline;
+.privacy {
   color: #4d5ae5;
-  padding-left: 6px;
-  display: flex;
-  align-items: flex-end;
 }
