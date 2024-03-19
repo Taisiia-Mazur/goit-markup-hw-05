@@ -434,43 +434,32 @@ footer .logo-accent {
   background-color: #31d0aa;
 }
 
-.footer-subscribe {
-  display: flex;
-}
 .label-subscribe {
   display: flex;
   flex-direction: column;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #fff;
-}
-.lable-text {
-  margin-bottom: 16px;
 }
 
 .input-subscribe {
-  background-color: inherit;
+  background-color: transparent;
   border: 1px solid #fff;
   border-radius: 4px;
   width: 264px;
   height: 40px;
   padding: 8px 0 8px 16px;
 }
-::placeholder {
+.input-subscribe::placeholder {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
   color: #fff;
 }
-.form {
+.form-subscribe {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 24px;
 }
-.form button {
+.form-subscribe button {
   width: 165px;
   height: 40px;
   padding: 8px 24px;
@@ -487,7 +476,7 @@ footer .logo-accent {
 /* -----------------Modal window------------------------- */
 
 .modal-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(46, 47, 66, 0.4);
   position: fixed;
   top: 0;
   left: 0;
@@ -497,42 +486,58 @@ footer .logo-accent {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
-  pointer-events: none;
+transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
-
+    opacity: 1;
+    pointer-events: none;
 .modal-overlay.in-open {
   opacity: 0;
   pointer-events: all;
 }
 
 .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 4px;
   width: 408px;
   min-height: 584px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background-color: #fcfcfc;
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
   width: 24px;
   height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 336px;
-  border-radius: 100%;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #e7e9fc;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin-bottom: 24px;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn:hover,
 .close-btn:focus {
   background-color: #404bbf;
+  border: none;
+}
+.icon-btn {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.close-btn:hover .icon-btn,
+.close-btn:focus .icon-btn {
   fill: #f4f4fd;
 }
 
@@ -544,16 +549,17 @@ footer .logo-accent {
   letter-spacing: 0.02em;
   color: #2e2f42;
   margin-bottom: 16px;
+  
 }
-
+.box-label {
+margin-top: 8px;
+}
 .form-label {
-  display: flex;
-  font-weight: 400;
+  display: block;
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  margin-top: 8px;
   margin-bottom: 4px;
 }
 .form-icon {
@@ -573,13 +579,15 @@ footer .logo-accent {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   height: 40px;
+  padding-left: 38px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-modal:hover,
-.input-modal:focus {
-  border: 1px solid #4d5ae5;
+.input-modal:checked {
+  border-color: #4d5ae5;
 }
+.input-modal:hover+.form-icon,
 .input-modal:focus + .form-icon {
   fill: #4d5ae5;
 }
