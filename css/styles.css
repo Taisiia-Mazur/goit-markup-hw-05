@@ -442,6 +442,7 @@ footer .logo-accent {
 .input-subscribe {
   background-color: transparent;
   border: 1px solid #ffffff;
+  color: #ffffff;
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
@@ -492,9 +493,10 @@ footer .logo-accent {
   align-items: center;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 1;
-  pointer-events: none;
+
 }
+    opacity: 1;
+    pointer-events: none;
 .modal-overlay.in-open {
   opacity: 0;
   pointer-events: all;
@@ -534,7 +536,10 @@ footer .logo-accent {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close-btn:hover,
+.close-btn:hover {
+    background-color: #404bbf;
+      border: none;
+}
 .close-btn:focus {
   background-color: #404bbf;
   border: none;
@@ -542,7 +547,9 @@ footer .logo-accent {
 .icon-btn {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.close-btn:hover .icon-btn,
+.close-btn:hover .icon-btn {
+  fill: #ffffff;
+}
 .close-btn:focus .icon-btn {
   fill: #ffffff;
 }
@@ -623,7 +630,6 @@ footer .logo-accent {
 }
 
 .comment::placeholder {
-  font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
@@ -661,7 +667,7 @@ footer .logo-accent {
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-input[type="checkbox"]:checked span {
+.input-checkbox:checked + .label-privacy>.checkbox-agree {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
